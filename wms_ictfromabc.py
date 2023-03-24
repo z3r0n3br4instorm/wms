@@ -173,6 +173,7 @@ def linux():
     os.system("curl -s https://deb.nodesource.com/setup_16.x | sudo bash")
     os.system("sudo apt-get install nodejs")
     os.system("npm install mudslide")
+    start()
 
 def main():
     try:
