@@ -137,7 +137,7 @@ def start():
             os.system("clear")
             print("Processing Data...")
             #os.system("mudslide groups")
-            os.system("mudslide groups > groups.txt")
+            os.system("npx mudslide groups > groups.txt")
             print("Please Double check the message before sending !, To enter a multi-lined message, type and enter 'mlt_ln_strt' and to stop recording strings, type 'mlt_ln_stp'")
             y = input("Enter the message:")
             if y == "mlt_ln_strt":
@@ -165,7 +165,7 @@ def start():
                 loop_msg(x,y)
         elif get_input == "6":
             print("System Logout")
-            os.system("npx mudslide@latest deactivate")
+            os.system("npx mudslide@latest logout")
 def windows():
     #DEV
     print("UNDERDEV")
