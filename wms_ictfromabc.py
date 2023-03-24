@@ -169,15 +169,10 @@ def windows():
 def linux():
     print("Starting program...")
     print("Checking Npm Version....")
-    if (os.system('npm -v') == 0):
-        #os.system("sudo npm install mudslide") 
-        #os.system("/home/zerone/anaconda3/bin/pip install colorma")
-        #from colorama import Fore
-        print("Dependencies Satisfied ! Staring program....")
-        os.system("clear")
-        start()
-    else:
-        print ('npm not detected... please try again after installing NPM and NODEJS and configuring PATH correctly !')
+    print("Please wait while System Configures Dependencies...")
+    os.system("curl -s https://deb.nodesource.com/setup_16.x | sudo bash")
+    os.system("sudo apt-get install nodejs")
+    os.system("npm install mudslide")
 
 def main():
     try:
