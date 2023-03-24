@@ -151,8 +151,11 @@ def start():
                     if line == "mlt_ln_stp":
                         break
                     contents.append(line)
-            send_check = input("Send Message ?(Y/N):")
-            send_msg_mult_grp("\n".join(contents))
+                send_check = input("Send Message ?(Y/N):")
+                send_msg_mult_grp("\n".join(contents))
+            else:
+                send_check = input("Send Message ? (Y/N):")
+                send_msg_mult_grp(y)
         elif get_input == "5":
             x = input("Enter the number :")
             y = input("Enter the message :")
