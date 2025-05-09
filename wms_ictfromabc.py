@@ -9,7 +9,7 @@ switch = 0
 def smn(number,message):
     if switch == 0:
         print("Sending Message to returned number...")
-        return_os_text = "npx mudslide send "+str(number)+" \""+str(message)+"\""
+        return_os_text = "npx mudslide@latest send "+str(number)+" \""+str(message)+"\""
         print(return_os_text)
         os.system(return_os_text)
 def loop_msg(number,message):
@@ -85,7 +85,7 @@ def find_grp(name,message):
         print("Error detected !. Ignoring...")
 def start():
     print("Checking Login Status...")
-    os.system("npx mudslide login")
+    os.system("npx mudslide@latest login")
     while True:
         os.system("clear")
         print("- Zerone Technologies Systems -\n\n")
@@ -106,7 +106,7 @@ def start():
         print("[7]Dump dataSync log [Under Dev]")
         get_input = input(str("ENTER SELECTION :"))
         if get_input == "0":
-            os.system("npx mudslide login")
+            os.system("npx mudslide@latest login")
             os.system("clear")
         elif get_input == "1":
             x = input("Enter the number :")
@@ -125,8 +125,8 @@ def start():
         elif get_input == "2":
             os.system("clear")
             print("Listing Available Groups")
-            os.system("mudslide groups")
-            os.system("mudslide groups > groups.txt")
+            os.system("mudslide@latest groups")
+            os.system("mudslide@latest groups > groups.txt")
             x = input("Enter the Group Subject:")
             y = input("Enter the message:")
             send_check = input("Send Message ?(Y/N):")
@@ -136,8 +136,8 @@ def start():
         elif get_input == "3":
             os.system("clear")
             print("Processing Data...")
-            #os.system("mudslide groups")
-            os.system("npx mudslide groups > groups.txt")
+            #os.system("mudslide@latest groups")
+            os.system("npx mudslide@latest groups > groups.txt")
             print("Please Double check the message before sending !, To enter a multi-lined message, type and enter 'mlt_ln_strt' and to stop recording strings, type 'mlt_ln_stp'")
             y = input("Enter the message:")
             if y == "mlt_ln_strt":
@@ -173,9 +173,10 @@ def linux():
     print("Starting program...")
     print("Checking Npm Version....")
     print("Please wait while System Configures Dependencies...")
-    os.system("curl -s https://deb.nodesource.com/setup_16.x | sudo bash")
+    os.system("curl -sL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh | sudo bash")
+    os.system("sudo apt update")
     os.system("sudo apt-get install nodejs")
-    os.system("npm install mudslide")
+    os.system("npm install mudslide@latest")
     start()
 
 def main():
